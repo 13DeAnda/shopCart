@@ -16,7 +16,43 @@ export default class Products extends React.Component {
     this.displayCart = this.displayCart.bind(this);
 
     this.state = {
-      cart: {},
+      cart: {
+        'CF1': {
+          'code' : 'CF1',
+          'name' : 'Coffe',
+          'price': 11.23,
+          'image': '/assets/cf1.jpg',
+          'quantity': 2
+        },
+        'CH1': {
+          'code' : 'CH1',
+          'name' : 'Chai',
+          'price': 3.11,
+          'image': '/assets/ch1.jpg',
+          'quantity': 1
+        },
+        'MK1': {
+          'code' : 'MK1',
+          'name' : 'Milk',
+          'price': 4.75,
+          'image': '/assets/mk1.jpg',
+          'quantity': 1
+        },
+        'AP1': {
+          'code' : 'AP1',
+          'name' : 'Apples',
+          'price': 6.00,
+          'image': '/assets/ap1.jpg',
+          'quantity': 3
+        },
+        'OM1': {
+          'code' : 'OM1',
+          'name' : 'Oatmeal',
+          'price': 3.71,
+          'image': '/assets/om1.jpg',
+          'quantity': 1
+        }
+      },
       cartTotalItems: 0,
       showCart: true,
       products: {

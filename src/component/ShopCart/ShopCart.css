@@ -1,3 +1,10 @@
 .shopCart{
   background: white;
 }
+
+.discount{
+  font-size: 10px;
+}
+.discount .price{
+  color: red;
+}

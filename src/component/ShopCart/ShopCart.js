@@ -12,40 +12,45 @@ export default class ShopCart extends React.Component {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.getTotal = this.getTotal.bind(this);
+    this.getDiscounts = this.getDiscounts.bind(this);
 
     this.state = {
       discounts: {
         'BOGO': {
-          itemCode: "cf1",
-          quantity: 1,
-          free: "cf1",
-          limited: false
-        },
-        'APPL': {
-          itemCode: "cf1",
-          minimun: 3,
-          price: 4.50,
-          limited: false
+          itemCode: "CF1",
+          quantityRequired: 2,
+          applied: "CF1",
+          limit: false,
+          type: "bogo",
         },
         'CHMK': {
-          itemCode: "cf1",
-          quantity: 1,
-          free: "mk1",
-          limited: 1
+          itemCode: "CH1",
+          quantityRequired: 1,
+          applied: "MK1",
+          limit: 1,
+          type: "free",
+        },
+        'APPL': {
+          itemCode: "AP1",
+          quantityRequired: 3,
+          applied: "AP1",
+          limit: false,
+          type: "reduced",
+          newPrice: 4.50
         },
         'APOM': {
-          itemCode: "om1",
-          quantity: 1,
-          discount: 'ap1',
-          limited: true
+          itemCode: "OM1",
+          quantityRequired: 1,
+          applied: "AP1",
+          limit: false,
+          type: "percentage",
+          newPrice: 50
         }
       },
       total: 0
     };
   }
-
   componentWillMount(props){
-    console.log("the component received the props", this.props);
     this.getTotal();
   }
   render() {
@@ -63,19 +68,32 @@ export default class ShopCart extends React.Component {
                 <th>Qty </th>
               </tr>
             </thead>
-            <tbody>
+
               {_.map(cart, function(product, index){
                 return (
-                  <tr key={index} >
-                    <td>{product.code} </td>
-                    <td>{product.name}</td>
-                    <td> ${product.price}</td>
-                    <td>{product.quantity}</td>
-                  </tr>
+                  <tbody key={index}>
+                    <tr >
+                      <td>{product.code} </td>
+                      <td>{product.name}</td>
+                      <td> ${product.price}</td>
+                      <td>{product.quantity}</td>
+                    </tr>
+
+                    {_.map(product.discounts, function(discount, key){
+                      return (
+                          <tr key={key} className="discount" >
+                            <td> </td>
+                            <td>{discount.discount}</td>
+                            <td className="price"> ${discount.price}</td>
+                            <td></td>
+                          </tr>
+                      )
+                    })}
+                  </tbody>
                 )
               })}
 
-            </tbody>
+
           </Table>
         : <div className="text-center"> Cart is empty </div>}
       </Row>
@@ -86,12 +104,64 @@ export default class ShopCart extends React.Component {
     );
   }
 
-
+  //logic
   onChange (e) {
     this.setState({textToAdd : e.target.value});
   }
 
-  getTotal(){
-    console.log("gona try to get the total", this.state.total);
+  getDiscounts(){
+    _.map(this.state.discounts, function(discount, key){
+      var itemNeeded = this.props.cart[discount.itemCode];
+      var itemDiscounted = this.props.cart[discount.applied]
+
+      if( itemNeeded && itemDiscounted && discount.quantityRequired <= itemDiscounted.quantity){
+
+        var discounts = this.props.cart[discount.applied].discounts? this.props.cart[discount.applied].discounts : [];
+        var price = 0;
+        var quantity = 0;
+
+
+        if(discount.type === 'bogo' || discount.type === 'free'){
+          price = -itemDiscounted.price;
+          quantity = Math.floor(itemDiscounted.quantity/discount.quantityRequired);
+        }
+        else if(discount.type === 'reduced'){
+          quantity = discount.quantityRequired;
+          price = -(itemNeeded.price - discount.newPrice);
+        }
+        else if(discount.type === 'percentage'){
+          price = -(itemDiscounted.price/100 * discount.newPrice);
+          quantity = itemDiscounted.quantity > itemNeeded.quantity? itemNeeded.quantity : itemDiscounted.quantity;
+        }
+
+        quantity = discount.limit && (quantity < discount.limit)? discount.limit : quantity;
+
+        for(var i = 0; i < quantity; i++){
+          discounts.push({discount: key, price: price});
+        }
+
+        this.props.cart[discount.applied].discounts = discounts;
+      }
+    }.bind(this));
   }
+
+  getTotal(){
+    var total = 0;
+
+    this.getDiscounts();
+
+    _.map(this.props.cart, function(item, index){
+      total += (item.price*item.quantity);
+
+      if(item.discounts){
+        _.map(item.discounts, function(discount){
+          total += (discount.price);
+        })
+      }
+    });
+
+    this.setState({total: total.toFixed(2)});
+  }
+
+
 }
