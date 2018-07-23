@@ -10,7 +10,6 @@ export default class ShopCart extends React.Component {
 
   constructor(props) {
     super(props);
-    this.onChange = this.onChange.bind(this);
     this.getTotal = this.getTotal.bind(this);
     this.getDiscounts = this.getDiscounts.bind(this);
 
@@ -66,8 +65,8 @@ export default class ShopCart extends React.Component {
         {(cart && Object.keys(cart).length > 0)?
           <Table   hover>
             <thead>
-              <tr>
-                <th>Code on here</th>
+              <tr className="text-left">
+                <th>Code</th>
                 <th>Item</th>
                 <th>Price</th>
                 <th>Qty </th>
@@ -76,7 +75,7 @@ export default class ShopCart extends React.Component {
               {_.map(cart, function(product, index){
                 return (
                   <tbody key={index}>
-                    <tr >
+                    <tr className="text-left">
                       <td>{product.code} </td>
                       <td>{product.name}</td>
                       <td> ${product.price}</td>
@@ -92,7 +91,7 @@ export default class ShopCart extends React.Component {
 
                     {_.map(product.discounts, function(discount, key){
                       return (
-                          <tr key={key} className="discount" >
+                          <tr key={key} className="discount text-left" >
                             <td> </td>
                             <td>{discount.discount}</td>
                             <td className="price"> ${discount.price}</td>
@@ -103,22 +102,17 @@ export default class ShopCart extends React.Component {
                   </tbody>
                 )
               }.bind(this))}
-
-
           </Table>
-        : <div className="text-center"> Cart is empty </div>}
+        : <div className="text-center"> <i>Cart is empty</i> </div>}
       </Row>
       <Row className='text-right'>
-        Total: ${this.state.total}
+        <b>Total: </b>${this.state.total}
       </Row>
      </div>
     );
   }
 
   //logic
-  onChange (e) {
-    this.setState({textToAdd : e.target.value});
-  }
 
   getDiscounts(cart){
     if(Object.keys(cart).length < 1){
@@ -130,19 +124,24 @@ export default class ShopCart extends React.Component {
       var itemDiscounted = newCart[discount.applied];
 
 
-      if( itemNeeded && itemDiscounted && discount.quantityRequired <= itemDiscounted.quantity){
-        //assumes that only one type of discount can be applied to an item
-        var discounts = [];
+      if( itemNeeded && itemDiscounted && discount.quantityRequired <= itemNeeded.quantity){
+
+        var discounts = []; //assumes that only one type of discount can be applied to an item
         var price = 0;
         var quantity = 0;
 
-        if(discount.type === 'bogo' || discount.type === 'free'){
+        if(discount.type === 'bogo'){
           price = -itemDiscounted.price;
           quantity = Math.floor(itemDiscounted.quantity / discount.quantityRequired);
         }
+        else if(discount.type === 'free'){
+          price = -itemDiscounted.price;
+          quantity = Math.floor(itemNeeded.quantity / discount.quantityRequired);
+          quantity = itemDiscounted.quantity >= quantity? quantity : itemDiscounted.quantity;
+        }
         else if(discount.type === 'reduced'){
-          quantity = itemDiscounted.quantity;
           price = -(itemNeeded.price - discount.newPrice);
+          quantity = itemDiscounted.quantity;
         }
         else if(discount.type === 'percentage'){
           price = -(itemDiscounted.price/100 * discount.newPrice);
@@ -184,6 +183,4 @@ export default class ShopCart extends React.Component {
 
     this.setState({total: total.toFixed(2)});
   }
-
-
 }

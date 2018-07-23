@@ -18,7 +18,7 @@ export default class Products extends React.Component {
     this.state = {
       cart: {},
       cartTotalItems: 0,
-      showCart: true,
+      showCart: false,
       products: {
         'CH1': {
           'code' : 'CH1',
@@ -95,11 +95,11 @@ export default class Products extends React.Component {
                   <h6>{product.name} </h6> <br/>
 
                     <div className='buttons'>
-                     {product.quantity > 0?
+                     {cart[product.code]?
                           <div className='addbuttons'>
                             <Glyphicon glyph="minus-sign" onClick={()=> this.removeFromCart(product)} />
 
-                            {product.quantity}
+                            {cart[product.code].quantity}
                           </div>
                         : '  '}
                         <div className='addbuttons'>
@@ -124,7 +124,6 @@ export default class Products extends React.Component {
 
   //functions
   addToCart(product){
-    console.log(this.state.cart['CF1']);
     var cart = _.cloneDeep(this.state.cart);
     var cartTotalItems = _.cloneDeep(this.state.cartTotalItems);
 
@@ -133,7 +132,6 @@ export default class Products extends React.Component {
     cart[product.code] = product;
 
     this.setState({cart: cart, cartTotalItems: cartTotalItems});
-    console.log("the cart", this.state.cart);
   }
 
   removeFromCart(product){

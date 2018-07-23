@@ -127,7 +127,7 @@ We’re looking for the following things when reviewing your code:
 
 1. Design x
 2. Testing
-3. Accuracy
+3. Accuracyx
 4. Flexibility x
 5. Containerization x
 
