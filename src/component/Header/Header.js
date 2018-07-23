@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem, Navbar, MenuItem, NavDropdown} from 'react-bootstrap';
+import { Nav, NavItem, Navbar} from 'react-bootstrap';
 import '../../shared/shared.css';
 import './Header.css';
 

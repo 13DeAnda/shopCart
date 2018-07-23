@@ -1,0 +1,33 @@
+.product{
+    width: 233px;
+    height: 209px;
+    display: inline-block;
+    margin-right: 50px;
+}
+.product img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.product .buttons{
+  text-align: right;
+  margin-top: -210px;
+}
+
+.glyphicon{
+  color: green;
+}
+.glyphicon:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+.addbuttons{
+  display: inline;
+}
+
+.product .glyphicon{
+  margin-left:3px;
+  margin-right: 3px;
+}
