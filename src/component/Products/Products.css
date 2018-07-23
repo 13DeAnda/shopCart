@@ -12,7 +12,7 @@
 
 .product .buttons{
   text-align: right;
-  margin-top: -210px;
+  margin-top: -190px;
 }
 
 .glyphicon{
@@ -30,4 +30,15 @@
 .product .glyphicon{
   margin-left:3px;
   margin-right: 3px;
+}
+
+.cartContainer{
+  width: 309px;;
+}
+
+.offers{
+  color: green;
+}
+.carousel-control{
+  display: none;
 }

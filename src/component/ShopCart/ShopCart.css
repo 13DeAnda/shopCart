@@ -1,7 +1,18 @@
 .shopCart{
   background: white;
+  position: absolute;
+  width: 309px;
+  right: 28px;
+  border: 1px solid #e0dcdc;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 4px;
+  box-shadow: 1px 1px #dedede;
 }
 
+.shopCart table{
+  width: 250px;
+}
 .discount{
   font-size: 10px;
 }

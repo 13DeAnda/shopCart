@@ -125,11 +125,11 @@ Total price expected: $16.61
 The scope of this project is meant to be fairly narrow, but there are a lot of details to consider.
 We’re looking for the following things when reviewing your code:
 
-1. Design
+1. Design x
 2. Testing
 3. Accuracy
-4. Flexibility
-5. Containerization
+4. Flexibility x
+5. Containerization x
 
 Please feel free to ask questions as they arise via email - do not leave comments here.
 
