@@ -22,3 +22,22 @@
 .shopCart .glyphicon{
   display: inline;
 }
+
+@media only screen and (max-width: 900px) {
+  .shopCart{
+    left: 30px;
+    top: 200px;
+    width: 93%;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .shopCart{
+    top: 200px;
+    left: 4%;
+    width: 93%;
+    height: 100%;
+  }
+}
+
+

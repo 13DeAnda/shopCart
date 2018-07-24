@@ -5,8 +5,10 @@
     margin-right: 50px;
 }
 .product img{
-  width: 100px;
-  height: 100px;
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  max-height: 100px;
   padding: 5px;
 }
 
