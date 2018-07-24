@@ -7,12 +7,15 @@ Docker Run:(install and run):
 
   1: `docker build -t shopcart .`
 
-  2: ```docker run -it \
+  2: 
+```
+  docker run -it \
         -v ${PWD}:/usr/src/app \
         -v /usr/src/app/node_modules \
         -p 3000:3000 \
         --rm \
-        shopcart```
+        shopcart
+```
 
 Node Run: (install and run)
 Install:
