@@ -81,7 +81,7 @@ export default class Products extends React.Component {
             </Carousel>
           </Col>
           <Col xs={4} className="text-right">
-            <Button bsSize="large" onClick={this.displayCart}>
+            <Button className="cartButton" bsSize="large" onClick={this.displayCart}>
               <Glyphicon glyph="shopping-cart" /> ({cartTotalItems})
             </Button>
           </Col>
@@ -96,14 +96,14 @@ export default class Products extends React.Component {
 
                     <div className='buttons'>
                      {cart[product.code]?
-                          <div className='addbuttons'>
-                            <Glyphicon glyph="minus-sign" onClick={()=> this.removeFromCart(product)} />
+                          <div className='addbutton'>
+                            <Glyphicon glyph="minus-sign" className='deleteProductButton' onClick={()=> this.removeFromCart(product)} />
 
                             {cart[product.code].quantity}
                           </div>
                         : '  '}
                         <div className='addbuttons'>
-                          <Glyphicon glyph="plus-sign" onClick={() => this.addToCart(product)}/>
+                          <Glyphicon glyph="plus-sign" className='addProductButton' onClick={() => this.addToCart(product)}/>
                         </div>
                     </div>
                 </Thumbnail>

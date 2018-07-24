@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount, shallow } from 'enzyme';
-import fs from 'fs';
 
 
 import ShopCart from '../component/ShopCart/ShopCart';
@@ -10,7 +9,6 @@ import samples from './data/shopCart.json'
 const shopCartWrapper = shallow(<ShopCart />);
 const shopCartInstance = shopCartWrapper.instance();
 
-//should be accesible through a json and should be an array
 
 describe('ShopCart component', () => {
 
