@@ -3,6 +3,7 @@
 
 Simple node/React aplication to display products, add to a shopcart and apply discounts.
 
+using node
 Docker Run:(install and run):
 
   1: `docker build -t shopcart .`
@@ -16,6 +17,9 @@ Docker Run:(install and run):
         --rm \
         shopcart
 ```
+
+
+ using node
 
 Node Run: (install and run)
 Install:
