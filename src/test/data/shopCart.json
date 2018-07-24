@@ -1,0 +1,135 @@
+[
+{
+  "cart":{
+    "AP1": {
+      "code" : "AP1",
+      "name" : "Apples",
+      "price": 6.00,
+      "image": "/assets/ap1.jpg",
+      "quantity": 3
+    }
+  },
+  "total": "13.50"
+},
+{
+  "cart":{
+    "AP1": {
+      "code" : "AP1",
+      "name" : "Apples",
+      "price": 6.00,
+      "image": "/assets/ap1.jpg",
+      "quantity": 1
+    },
+    "OM1": {
+      "code" : "OM1",
+      "name" : "Apples",
+      "price": 3.71,
+      "image": "/assets/om1.jpg",
+      "quantity": 1
+    }
+  },
+  "total": "6.71"
+},
+{
+  "cart":{
+    "CF1": {
+      "code" : "CF1",
+      "name" : "Coffe",
+      "price": 11.23,
+      "image": "/assets/cf1.jpg",
+      "quantity": 2
+    }
+  },
+  "total": "11.23"
+},
+{
+  "cart":{
+    "CH1": {
+      "code" : "CH1",
+      "name" : "Chai",
+      "price": 3.11,
+      "image": "/assets/ch1.jpg",
+      "quantity": 1
+    },
+    "MK1": {
+      "code" : "MK1",
+      "name" : "Milk",
+      "price": 4.75,
+      "image": "/assets/mk1.jpg",
+      "quantity": 1
+    }
+  },
+  "total": "3.11"
+},
+{
+  "cart":{
+    "CH1": {
+      "code" : "CH1",
+      "name" : "Chai",
+      "price": 3.11,
+      "image": "/assets/ch1.jpg",
+      "quantity": 1
+    },
+    "AP1": {
+      "code" : "AP1",
+      "name" : "Apples",
+      "price": 6.00,
+      "image": "/assets/ap1.jpg",
+      "quantity": 1
+    },
+    "CF1": {
+      "code" : "CF1",
+      "name" : "Coffe",
+      "price": 11.23,
+      "image": "/assets/cf1.jpg",
+      "quantity": 1
+    },
+    "MK1": {
+      "code" : "MK1",
+      "name" : "Milk",
+      "price": 4.75,
+      "image": "/assets/mk1.jpg",
+      "quantity": 1
+    }
+  },
+  "total": "20.34"
+},
+{
+  "cart":{
+    "AP1": {
+      "code" : "AP1",
+      "name" : "Apples",
+      "price": 6.00,
+      "image": "/assets/ap1.jpg",
+      "quantity": 1
+    },
+    "MK1": {
+      "code" : "MK1",
+      "name" : "Milk",
+      "price": 4.75,
+      "image": "/assets/mk1.jpg",
+      "quantity": 1
+    }
+  },
+  "total": "10.75"
+},
+{
+  "cart":{
+    "CH1": {
+      "code" : "CH1",
+      "name" : "Chai",
+      "price": 3.11,
+      "image": "/assets/ch1.jpg",
+      "quantity": 1
+    },
+    "AP1": {
+      "code" : "AP1",
+      "name" : "Apples",
+      "price": 6.00,
+      "image": "/assets/ap1.jpg",
+      "quantity": 3
+    }
+  },
+  "total": "16.61"
+}
+]

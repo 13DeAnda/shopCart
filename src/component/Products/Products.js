@@ -110,7 +110,7 @@ export default class Products extends React.Component {
               );
             }.bind(this))}
           </Col>
-          <Collapse in={showCart} mountOnEnter={true}>
+          <Collapse in={showCart} mountOnEnter={false}>
             <div className="cartContainer">
               <ShopCart cart={cart}
                       addToCart={this.addToCart}

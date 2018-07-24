@@ -165,16 +165,18 @@ export default class ShopCart extends React.Component {
         this.setState({cart: newCart});
       }
     }.bind(this));
+    return newCart;
   }
 
   getTotal(cart){
     var total = 0;
 
-    this.getDiscounts(cart);
-    _.map(cart, function(item, index){
+    var newCart = this.getDiscounts(cart);
 
+    _.map(newCart, function(item, index){
       total += (item.price*item.quantity);
       if(item.discounts){
+
         _.map(item.discounts, function(discount){
           total += (discount.price);
         })
@@ -182,5 +184,6 @@ export default class ShopCart extends React.Component {
     });
 
     this.setState({total: total.toFixed(2)});
+    return total.toFixed(2);
   }
 }

@@ -46,3 +46,7 @@
 .shopCartHeader{
   margin-bottom: 10px;
 }
+
+.tumbnail img{
+  background: blue;
+}
