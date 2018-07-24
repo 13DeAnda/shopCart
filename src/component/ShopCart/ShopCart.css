@@ -1,10 +1,43 @@
-.listItem{
-  margin-top: 20px;
-  font-size: 20px;
-  font-family: cursive;
-  list-style: none;
-  margin-left: 10%;
+.shopCart{
+  background: white;
+  position: absolute;
+  width: 309px;
+  right: 28px;
+  border: 1px solid #e0dcdc;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 1px #dedede;
 }
-.checkListBox{
-  margin-left: 10px !important;
+
+.shopCart table{
+  width: 250px;
 }
+.discount{
+  font-size: 10px;
+}
+.discount .price{
+  color: red;
+}
+
+.shopCart .glyphicon{
+  display: inline;
+}
+
+@media only screen and (max-width: 900px) {
+  .shopCart{
+    left: 30px;
+    top: 200px;
+    width: 93%;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .shopCart{
+    top: 200px;
+    left: 4%;
+    width: 93%;
+    height: 100%;
+  }
+}
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem, Navbar, MenuItem, NavDropdown} from 'react-bootstrap';
+import { Nav, NavItem, Navbar} from 'react-bootstrap';
 import '../../shared/shared.css';
 import './Header.css';
 
@@ -21,10 +21,10 @@ export default class Header extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="https://www.linkedin.com/in/13deanda/">
+            <NavItem eventKey={1} href="https://github.com/13DeAnda">
               GitHub
             </NavItem>
-            <NavItem eventKey={2} href="#">
+            <NavItem eventKey={2}  href="https://www.linkedin.com/in/13deanda/">
               LinkedIn
             </NavItem>
           </Nav>

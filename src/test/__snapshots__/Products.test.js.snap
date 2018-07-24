@@ -1,0 +1,346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Products component should render snapshot ShopCart 1`] = `
+<div
+  className="Products container"
+>
+  <div
+    className="shopCartHeader  row"
+  >
+    <div
+      className="text-center offers col-xs-8"
+    >
+      <b>
+         One year anniversary offers!
+      </b>
+      <div
+        className="carousel slide"
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      >
+        <ol
+          className="carousel-indicators"
+        >
+          <li
+            className="active"
+            onClick={[Function]}
+          />
+           
+          <li
+            className={null}
+            onClick={[Function]}
+          />
+           
+          <li
+            className={null}
+            onClick={[Function]}
+          />
+           
+          <li
+            className={null}
+            onClick={[Function]}
+          />
+           
+        </ol>
+        <div
+          className="carousel-inner"
+        >
+          <div
+            className="text-center item active"
+          >
+            BOGO -- Buy-One-Get-One-Free Special on Coffee. (Unlimited)
+          </div>
+          <div
+            className="text-center item"
+          >
+            APPL -- If you buy 3 or more bags of Apples, the price drops to $4.50.
+          </div>
+          <div
+            className="text-center item"
+          >
+            CHMK -- Purchase a box of Chai and get milk free. (Limit 1)
+          </div>
+          <div
+            className="text-center item"
+          >
+            APOM -- Purchase a bag of Oatmeal and get 50% off a bag of Apples
+          </div>
+        </div>
+        <a
+          className="carousel-control left"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          <span
+            className="glyphicon glyphicon-chevron-left"
+          />
+          <span
+            className="sr-only"
+          >
+            Previous
+          </span>
+        </a>
+        <a
+          className="carousel-control right"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          <span
+            className="glyphicon glyphicon-chevron-right"
+          />
+          <span
+            className="sr-only"
+          >
+            Next
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="text-right col-xs-4"
+    >
+      <button
+        className="cartButton btn btn-lg btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="glyphicon glyphicon-shopping-cart"
+        />
+         (
+        0
+        )
+      </button>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-10"
+    >
+      <div
+        className="product text-center thumbnail"
+      >
+        <img
+          alt={undefined}
+          onError={undefined}
+          onLoad={undefined}
+          src="/assets/ch1.jpg"
+        />
+        <div
+          className="caption"
+        >
+          <h4>
+             $ 
+            3.11
+          </h4>
+          <h6>
+            Chai
+             
+          </h6>
+           
+          <br />
+          <div
+            className="buttons"
+          >
+              
+            <div
+              className="addbuttons"
+            >
+              <span
+                className="addProductButton glyphicon glyphicon-plus-sign"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="product text-center thumbnail"
+      >
+        <img
+          alt={undefined}
+          onError={undefined}
+          onLoad={undefined}
+          src="/assets/ap1.jpg"
+        />
+        <div
+          className="caption"
+        >
+          <h4>
+             $ 
+            6
+          </h4>
+          <h6>
+            Apples
+             
+          </h6>
+           
+          <br />
+          <div
+            className="buttons"
+          >
+              
+            <div
+              className="addbuttons"
+            >
+              <span
+                className="addProductButton glyphicon glyphicon-plus-sign"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="product text-center thumbnail"
+      >
+        <img
+          alt={undefined}
+          onError={undefined}
+          onLoad={undefined}
+          src="/assets/cf1.jpg"
+        />
+        <div
+          className="caption"
+        >
+          <h4>
+             $ 
+            11.23
+          </h4>
+          <h6>
+            Coffe
+             
+          </h6>
+           
+          <br />
+          <div
+            className="buttons"
+          >
+              
+            <div
+              className="addbuttons"
+            >
+              <span
+                className="addProductButton glyphicon glyphicon-plus-sign"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="product text-center thumbnail"
+      >
+        <img
+          alt={undefined}
+          onError={undefined}
+          onLoad={undefined}
+          src="/assets/mk1.jpg"
+        />
+        <div
+          className="caption"
+        >
+          <h4>
+             $ 
+            4.75
+          </h4>
+          <h6>
+            Milk
+             
+          </h6>
+           
+          <br />
+          <div
+            className="buttons"
+          >
+              
+            <div
+              className="addbuttons"
+            >
+              <span
+                className="addProductButton glyphicon glyphicon-plus-sign"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="product text-center thumbnail"
+      >
+        <img
+          alt={undefined}
+          onError={undefined}
+          onLoad={undefined}
+          src="/assets/om1.jpg"
+        />
+        <div
+          className="caption"
+        >
+          <h4>
+             $ 
+            3.71
+          </h4>
+          <h6>
+            Oatmeal
+             
+          </h6>
+           
+          <br />
+          <div
+            className="buttons"
+          >
+              
+            <div
+              className="addbuttons"
+            >
+              <span
+                className="addProductButton glyphicon glyphicon-plus-sign"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-expanded={null}
+      className="cartContainer collapse"
+    >
+      <div
+        className="shopCart text-right"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="text-center"
+          >
+             
+            <i>
+              Cart is empty
+            </i>
+             
+          </div>
+        </div>
+        <div
+          className="text-right row"
+        >
+          <b>
+            Total: 
+          </b>
+          $
+          0
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

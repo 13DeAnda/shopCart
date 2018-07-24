@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShopCart component should render snapshot ShopCart 1`] = `
+<div
+  className="shopCart text-right"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="text-center"
+    >
+       
+      <i>
+        Cart is empty
+      </i>
+       
+    </div>
+  </div>
+  <div
+    className="text-right row"
+  >
+    <b>
+      Total: 
+    </b>
+    $
+    0
+  </div>
+</div>
+`;

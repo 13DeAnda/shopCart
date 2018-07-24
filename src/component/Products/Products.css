@@ -1,0 +1,56 @@
+.product{
+    width: 233px;
+    height: 209px;
+    display: inline-block;
+    margin-right: 50px;
+}
+.product img{
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  max-height: 100px;
+  padding: 5px;
+}
+
+.product .buttons{
+  text-align: right;
+  margin-top: -190px;
+  float: right;
+  display: inline-flex;
+}
+
+.glyphicon{
+  color: green;
+}
+.glyphicon:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+.addbutton{
+  display: inline;
+}
+
+.product .glyphicon{
+  margin-left:3px;
+  margin-right: 3px;
+}
+
+.cartContainer{
+  width: 309px;;
+}
+
+.offers{
+  color: green;
+}
+.carousel-control{
+  display: none;
+}
+
+.shopCartHeader{
+  margin-bottom: 10px;
+}
+
+.tumbnail img{
+  background: blue;
+}
