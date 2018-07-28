@@ -17,7 +17,7 @@ body{
 }
 
 .container{
-	margin: 30px;
+	margin: auto;
 }
 
 .error{
@@ -57,10 +57,10 @@ input{
 .mask{
   height: 100%;
   width: 100%;
-  top: 111px;
+  top:0;
   left: 0;
   background: #7373736b;
-  position: absolute;
+  position: fixed;
   z-index: 100;
 }
 .maskTop{

@@ -70,6 +70,7 @@ export default class ShopCart extends React.Component {
                 <th>Item</th>
                 <th>Price</th>
                 <th>Qty </th>
+                <th>Edit</th>
               </tr>
             </thead>
               {_.map(cart, function(product, index){
@@ -80,13 +81,15 @@ export default class ShopCart extends React.Component {
                       <td>{product.name}</td>
                       <td> ${product.price}</td>
                       <td className="text-center">
-                        {product.quantity}<br/>
+                        {product.quantity}
+                      </td>
+                      <td>
                         <div className="buttons">
                           <Glyphicon glyph="minus-sign" onClick={()=> this.props.removeFromCart(product)} />
                           <Glyphicon glyph="plus-sign" onClick={() => this.props.addToCart(product)}/>
                         </div>
-
                       </td>
+
                     </tr>
 
                     {_.map(product.discounts, function(discount, key){

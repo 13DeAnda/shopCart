@@ -1,8 +1,7 @@
 .product{
-    width: 233px;
+    width: 100%;
     height: 209px;
     display: inline-block;
-    margin-right: 50px;
 }
 .product img{
   width: auto;
@@ -49,5 +48,15 @@
 
 .shopCartHeader{
   margin-bottom: 10px;
+}
+
+.cartButton{
+  margin-top: -5px;
+  margin-right: 5%;
+  color: white;
+}
+
+.cartButton .glyphicon{
+  color: white;
 }
 

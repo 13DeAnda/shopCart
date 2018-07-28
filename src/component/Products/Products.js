@@ -21,6 +21,7 @@ export default class Products extends React.Component {
       cart: {},
       cartTotalItems: 0,
       showCart: true,
+      waitingPopOver: 0,
       showProductPopOver: null,
       products: {
         'CH1': {
@@ -67,34 +68,37 @@ export default class Products extends React.Component {
       <Grid className='Products'>
         <div className={showCart? 'hidden' : 'mask'} onClick={this.displayCart}></div>
         <Row className='shopCartHeader '>
-          <Col xs={8} className="text-center offers">
+          <Col xs={12} className="text-center offers">
+            <div className="text-center">
             <b> One year anniversary offers!</b>
-            <Carousel>
-              <Carousel.Item className='text-center'>
-                 BOGO -- Buy-One-Get-One-Free Special on Coffee. (Unlimited)
-              </Carousel.Item>
-              <Carousel.Item className='text-center'>
-                 APPL -- If you buy 3 or more bags of Apples, the price drops to $4.50.
-              </Carousel.Item>
-              <Carousel.Item className='text-center'>
-                 CHMK -- Purchase a box of Chai and get milk free. (Limit 1)
-              </Carousel.Item>
-              <Carousel.Item className='text-center'>
-                  APOM -- Purchase a bag of Oatmeal and get 50% off a bag of Apples
-              </Carousel.Item>
-            </Carousel>
+              <Carousel>
+                <Carousel.Item className='text-center'>
+                   BOGO -- Buy-One-Get-One-Free Special on Coffee. (Unlimited)
+                </Carousel.Item>
+                <Carousel.Item className='text-center'>
+                   APPL -- If you buy 3 or more bags of Apples, the price drops to $4.50.
+                </Carousel.Item>
+                <Carousel.Item className='text-center'>
+                   CHMK -- Purchase a box of Chai and get milk free. (Limit 1)
+                </Carousel.Item>
+                <Carousel.Item className='text-center'>
+                    APOM -- Purchase a bag of Oatmeal and get 50% off a bag of Apples
+                </Carousel.Item>
+              </Carousel>
+            </div>
+            <div className="text-right">
+              <Button className="cartButton maskTop" bsSize="sm" onClick={this.displayCart}>
+                <Glyphicon glyph="shopping-cart" /> ({cartTotalItems})
+              </Button>
+              {showProductPopOver? <ProductPopOver product={showProductPopOver} /> : null}
+            </div>
           </Col>
-          <Col xs={4} className="text-right">
-            <Button className="cartButton maskTop" bsSize="sm" onClick={this.displayCart}>
-              <Glyphicon glyph="shopping-cart" /> ({cartTotalItems})
-            </Button>
-            {showProductPopOver? <ProductPopOver product={showProductPopOver} /> : null}
-          </Col>
+
         </Row>
         <Row>
-          <Col sm={11}>
-            {_.map(products, function(product, index){
-              return(
+          {_.map(products, function(product, index){
+            return(
+              <Col sm={3}>
                 <Thumbnail className='product text-center' src={product.image}  key={index}>
                   <h4> $ {product.price}</h4>
                   <h6>{product.name} </h6> <br/>
@@ -112,9 +116,9 @@ export default class Products extends React.Component {
                         </div>
                     </div>
                 </Thumbnail>
-              );
-            }.bind(this))}
-          </Col>
+              </Col>
+            );
+          }.bind(this))}
           <div className={showCart? 'hidden' : ''} >
             <ShopCart cart={cart}
                     addToCart={this.addToCart}
@@ -134,7 +138,9 @@ export default class Products extends React.Component {
     cartTotalItems++;
     cart[product.code] = product;
 
-    this.setState({cart: cart, cartTotalItems: cartTotalItems, showProductPopOver: product});
+    var waitingPopOver = _.cloneDeep(this.state.waitingPopOver);
+
+    this.setState({cart: cart, cartTotalItems: cartTotalItems, showProductPopOver: product, waitingPopOver: ++waitingPopOver});
     this.displayProductPopOver(product);
   }
 
@@ -155,8 +161,14 @@ export default class Products extends React.Component {
 
   displayProductPopOver(product){
     setTimeout( function() {
-      this.setState({showProductPopOver: null});
-    }.bind(this),4000);
+      var waitingPopOver = _.cloneDeep(this.state.waitingPopOver);
+      if(waitingPopOver > 1){
+        this.setState({waitingPopOver: --waitingPopOver});
+      }
+      else {
+        this.setState({showProductPopOver: null, waitingPopOver: 0});
+      }
+    }.bind(this),3000);
   }
 
   displayCart(){

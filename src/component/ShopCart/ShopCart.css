@@ -5,15 +5,13 @@
   right: 28px;
   border: 1px solid #e0dcdc;
   padding: 20px;
+  padding-bottom: 40px;
   border-radius: 4px;
   box-shadow: 1px 1px #dedede;
   overflow-y: scroll;
-  max-height: 80%;
+  max-height: 70%;
 }
 
-.shopCart table{
-  width: 250px;
-}
 .discount{
   font-size: 10px;
 }
@@ -36,11 +34,4 @@
 
 .carousel-indicators{
   display: none;
-}
-
-.cartButton{
-  color: white;
-}
-.cartButton .glyphicon{
-  color: white;
 }
