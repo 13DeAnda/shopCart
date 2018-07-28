@@ -1,5 +1,5 @@
 import React from 'react';
-import {Thumbnail, Button, Row, Col, Grid, Glyphicon, Collapse, Carousel} from 'react-bootstrap';
+import {Thumbnail, Button, Row, Col, Grid, Glyphicon, Carousel} from 'react-bootstrap';
 
 import ShopCart from '../ShopCart/ShopCart';
 
@@ -81,7 +81,7 @@ export default class Products extends React.Component {
             </Carousel>
           </Col>
           <Col xs={4} className="text-right">
-            <Button className="cartButton" bsSize="large" onClick={this.displayCart}>
+            <Button className="cartButton" bsSize="medium" onClick={this.displayCart}>
               <Glyphicon glyph="shopping-cart" /> ({cartTotalItems})
             </Button>
           </Col>
@@ -110,13 +110,12 @@ export default class Products extends React.Component {
               );
             }.bind(this))}
           </Col>
-          <Collapse in={showCart} mountOnEnter={false}>
-            <div className="cartContainer">
+
+            <div className={showCart? 'hidden' : ''} >
               <ShopCart cart={cart}
                       addToCart={this.addToCart}
                       removeFromCart={this.removeFromCart} />
             </div>
-          </Collapse>
         </Row>
       </Grid>
     );

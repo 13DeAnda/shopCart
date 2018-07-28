@@ -44,3 +44,7 @@ input{
   color: #4f654c;
   font-style: oblique;
 }
+
+.hidden{
+  display: none;
+}
