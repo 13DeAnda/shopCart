@@ -2,6 +2,7 @@ import React from 'react';
 import {Thumbnail, Button, Row, Col, Grid, Glyphicon, Carousel} from 'react-bootstrap';
 
 import ShopCart from '../ShopCart/ShopCart';
+import ProductPopOver from '../ProductPopOver/ProductPopOver';
 
 import './Products.css';
 
@@ -14,11 +15,13 @@ export default class Products extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
     this.displayCart = this.displayCart.bind(this);
+    this.displayProductPopOver = this.displayProductPopOver.bind(this);
 
     this.state = {
       cart: {},
       cartTotalItems: 0,
       showCart: true,
+      showProductPopOver: null,
       products: {
         'CH1': {
           'code' : 'CH1',
@@ -59,7 +62,7 @@ export default class Products extends React.Component {
     };
   }
   render() {
-    var {products, cart, cartTotalItems, showCart} = this.state;
+    var {products, cart, cartTotalItems, showCart, showProductPopOver} = this.state;
     return (
       <Grid className='Products'>
         <div className={showCart? 'hidden' : 'mask'} onClick={this.displayCart}></div>
@@ -85,10 +88,11 @@ export default class Products extends React.Component {
             <Button className="cartButton maskTop" bsSize="sm" onClick={this.displayCart}>
               <Glyphicon glyph="shopping-cart" /> ({cartTotalItems})
             </Button>
+            {showProductPopOver? <ProductPopOver product={showProductPopOver} /> : null}
           </Col>
         </Row>
         <Row>
-          <Col sm={10}>
+          <Col sm={11}>
             {_.map(products, function(product, index){
               return(
                 <Thumbnail className='product text-center' src={product.image}  key={index}>
@@ -130,7 +134,8 @@ export default class Products extends React.Component {
     cartTotalItems++;
     cart[product.code] = product;
 
-    this.setState({cart: cart, cartTotalItems: cartTotalItems});
+    this.setState({cart: cart, cartTotalItems: cartTotalItems, showProductPopOver: product});
+    this.displayProductPopOver(product);
   }
 
   removeFromCart(product){
@@ -146,6 +151,12 @@ export default class Products extends React.Component {
     }
 
     this.setState({cart: cart, cartTotalItems: cartTotalItems});
+  }
+
+  displayProductPopOver(product){
+    setTimeout( function() {
+      this.setState({showProductPopOver: null});
+    }.bind(this),4000);
   }
 
   displayCart(){

@@ -1,0 +1,36 @@
+.ProductPopOver{
+  background: white;
+  color: gray;
+  font-size: 10px;
+  padding: 10px;
+  width: 300px;
+  position: fixed;
+  top: 80%;
+  right:3%;
+  z-index: 102;
+  box-shadow: 0 5px 10px rgba(12, 11, 11, 0.77);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+}
+
+.ProductPopOver img{
+  width: auto;
+  max-width: 50px;
+  height: auto;
+  max-height: 50px;
+  padding: 5px;
+}
+
+.ProductPopOver .text{
+  font-size: 13px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .ProductPopOver{
+    display: none;
+  }
+}
+
