@@ -18,7 +18,7 @@ export default class Products extends React.Component {
     this.state = {
       cart: {},
       cartTotalItems: 0,
-      showCart: false,
+      showCart: true,
       products: {
         'CH1': {
           'code' : 'CH1',
@@ -62,6 +62,7 @@ export default class Products extends React.Component {
     var {products, cart, cartTotalItems, showCart} = this.state;
     return (
       <Grid className='Products'>
+        <div className={showCart? 'hidden' : 'mask'} onClick={this.displayCart}></div>
         <Row className='shopCartHeader '>
           <Col xs={8} className="text-center offers">
             <b> One year anniversary offers!</b>
@@ -81,7 +82,7 @@ export default class Products extends React.Component {
             </Carousel>
           </Col>
           <Col xs={4} className="text-right">
-            <Button className="cartButton" bsSize="medium" onClick={this.displayCart}>
+            <Button className="cartButton maskTop" bsSize="sm" onClick={this.displayCart}>
               <Glyphicon glyph="shopping-cart" /> ({cartTotalItems})
             </Button>
           </Col>
@@ -110,12 +111,11 @@ export default class Products extends React.Component {
               );
             }.bind(this))}
           </Col>
-
-            <div className={showCart? 'hidden' : ''} >
-              <ShopCart cart={cart}
-                      addToCart={this.addToCart}
-                      removeFromCart={this.removeFromCart} />
-            </div>
+          <div className={showCart? 'hidden' : ''} >
+            <ShopCart cart={cart}
+                    addToCart={this.addToCart}
+                    removeFromCart={this.removeFromCart} />
+          </div>
         </Row>
       </Grid>
     );
@@ -150,5 +150,12 @@ export default class Products extends React.Component {
 
   displayCart(){
     this.setState({showCart: !this.state.showCart});
+
+    if(this.state.showCart){
+      document.getElementById('body').style.overflow = "hidden";
+    }
+    else{
+      document.getElementById('body').style.overflow = "auto";
+    }
   }
 }

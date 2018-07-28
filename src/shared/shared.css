@@ -26,12 +26,17 @@ body{
   font-style: italic;
   padding: 4px;
 }
-button{
+button,{
   color: white;
   background: #5a7d55;
   padding: 5px;
   border-radius: 5px;
   margin-left: 10px;
+}
+
+.btn-default:focus, .btn-default:hover {
+  background-color: #46a977;
+  color: #667b71;
 }
 input{
   border-radius: 5px;
@@ -47,4 +52,23 @@ input{
 
 .hidden{
   display: none;
+}
+
+.mask{
+  height: 100%;
+  width: 100%;
+  top: 111px;
+  left: 0;
+  background: #7373736b;
+  position: absolute;
+  z-index: 100;
+}
+.maskTop{
+  z-index: 101;
+  position: inherit;
+  background: green;
+}
+
+.muted{
+  color: gray !important;
 }

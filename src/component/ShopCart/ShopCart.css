@@ -23,7 +23,7 @@
   display: inline;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
   .shopCart{
     left: 3%;
     right: 3%;
@@ -36,3 +36,9 @@
   display: none;
 }
 
+.cartButton{
+  color: white;
+}
+.cartButton .glyphicon{
+  color: white;
+}

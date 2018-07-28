@@ -60,7 +60,7 @@ export default class ShopCart extends React.Component {
   render() {
     var {cart} = this.state;
     return (
-     <div  className="shopCart text-right">
+     <div  className="shopCart text-right maskTop">
       <Row>
         {(cart && Object.keys(cart).length > 0)?
           <Table   hover>
@@ -103,7 +103,10 @@ export default class ShopCart extends React.Component {
                 )
               }.bind(this))}
           </Table>
-        : <div className="text-center"> <i>Cart is empty</i> </div>}
+        : <div className="text-center">
+            <i>Your cart is Empty</i><br/>
+            <Glyphicon className="muted" glyph="shopping-cart"/>
+          </div>}
       </Row>
       <Row className='text-right'>
         <b>Total: </b>${this.state.total}

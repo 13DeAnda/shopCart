@@ -22,7 +22,7 @@
 .glyphicon{
   color: green;
 }
-.glyphicon:hover{
+.product .glyphicon:hover{
   color: blue;
   cursor: pointer;
 }
